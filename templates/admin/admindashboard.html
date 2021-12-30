@@ -1,0 +1,156 @@
+{% extends 'admin/admin.html' %}
+<!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+            {% block content %}
+
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-8 align-self-center">
+                        <h3 class="page-title mb-0 p-0">Dashboard</h3>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{% url 'app:admindashboard' %}">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales chart -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">NAV</h4>
+                                <div class="text-end">
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> 10</h2>
+                                    <span class="text-muted">Todays NAV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">NAV</h4>
+                                <div class="text-end">
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-success"></i> 10</h2>
+                                    <span class="text-muted">Todays NAV</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Portfolio</h4>
+                                <div class="text-end">
+                                    <h2 class="font-light mb-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
+                                    <span class="text-muted">Total Holdings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+
+                <!-- ============================================================== -->
+                <!-- Table -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex">
+                                    <h4 class="card-title col-md-10 mb-md-0 mb-3 align-self-center">Purchase History
+                                    </h4>
+                                    <div class="col-md-2 ms-auto">
+                                        <select class="form-select shadow-none col-md-2 ml-auto">
+                                            <option selected>January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                            <option value="4">May</option>
+                                            <option value="5">June</option>
+                                            <option value="6">July</option>
+                                            <option value="7">August</option>
+                                            <option value="8">September</option>
+                                            <option value="9">Octomber</option>
+                                            <option value="10">November</option>
+                                            <option value="11">December</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="table-responsive mt-5">
+                                    <table class="table stylish-table no-wrap">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round">S</span></td>
+                                                <td class="align-middle">
+                                                    <h6>Sunil Joshi</h6>
+                                                </td>
+                                                <td class="align-middle">Elite Admin</td>
+                                                <td class="align-middle">$3.9K</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="round round-success">B</span></td>
+                                                <td class="align-middle">
+                                                    <h6>Bhavesh patel</h6>
+                                                </td>
+                                                <td class="align-middle">MedicalPro Theme</td>
+                                                <td class="align-middle">$12.9K</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="round round-primary">N</span></td>
+                                                <td class="align-middle">
+                                                    <h6>Nirav Joshi</h6>
+                                                </td>
+                                                <td class="align-middle">Elite Admin</td>
+                                                <td class="align-middle">$10.9K</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="round round-warning">M</span></td>
+                                                <td class="align-middle">
+                                                    <h6>Micheal Doe</h6>
+                                                </td>
+                                                <td class="align-middle">Helping Hands</td>
+                                                <td class="align-middle">$12.9K</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="round round-danger">N</span></td>
+                                                <td class="align-middle">
+                                                    <h6>Johnathan</h6>
+                                                </td>
+                                                <td class="align-middle">Digital Agency</td>
+                                                <td class="align-middle">$2.6K</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            
+            {%endblock%}

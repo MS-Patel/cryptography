@@ -1,0 +1,376 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Cryptography
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" class="css">
+</head>
+
+<body>
+    <section id="home">
+        <header class="header">
+            <nav class="navbar">
+                <a href="/" class="nav-logo"><img src="/static/145 by 108-01.png" alt=""></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about1" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#why1" class="nav-link">Why Cryptography?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#faq" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+            </nav>
+
+
+        </header>
+        <img src="static/Slider-01.png" alt="home" class="headerimage">
+        <h1 class="headerh1">Investment and Finance Growth</h1>
+        <div class="popup" onclick="loginfunction()">
+            <button class="btn">Login</button>
+            <span id="loginpopup" class="loginpopup">
+                <div class="cctn">
+                    <div class="ctn" id="ctn">
+                   <a href="/"> <span id="closeModal" class="white">&times;</span></a>
+                        <div class="form-ctn sign-up-ctn">
+                            <form method="post" action="{% url 'app:login' %}">
+                                <h1>Create Account</h1>
+                                {% csrf_token %}
+                                <input type="text" name=name placeholder="Name" />
+                                <input type="text" name=uname placeholder="Username" />
+                                <input type="password" name=password placeholder="Password" />
+                                <button>Sign Up</button>
+                            </form>
+                        </div>
+                        <div class="form-ctn sign-in-ctn">
+                            <form action="{% url 'app:login' %}" method="post">
+                                <h1>Sign in</h1>
+                                {% csrf_token %}
+                                <input type="text" name="uname" placeholder="Username" />
+                                <input type="password" name="password" placeholder="Password" />
+                                <a href="#">Forgot your password?</a>
+                                <button>Sign In</button>
+                            </form>
+                        </div>
+                        <div class="ovrlay-ctn">
+                            <div class="ovrlay">
+                                <div class="ovrlay-panel ovrlay-left">
+                                    <h1>Welcome Back!</h1>
+                                    <p>To keep connected with us please login with your personal info</p>
+                                    <button class="ghost" id="signIn">Sign In</button>
+                                </div>
+                                <div class="ovrlay-panel ovrlay-right">
+                                    <h1>Hello, Friend!</h1>
+                                    <p>Enter your personal details and start journey with us</p>
+                                    <button class="ghost" id="signUp">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        </div>
+        <script>
+            function loginfunction() {
+                console.log("clicked")
+                var popup = document.getElementById("loginpopup");
+                popup.classList.add("show");
+                document.getElementsByTagName("body")[0].style.position="fixed";
+                document.getElementsByClassName("header")[0].style.filter="blur(10px)";
+                document.getElementsByClassName("btn")[0].style.filter="blur(10px)";
+                document.getElementsByTagName("img")[1].style.filter="blur(10px)";
+                document.getElementsByTagName("h1")[0].style.filter="blur(10px)";
+                
+            }
+            const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const ctn = document.getElementById('ctn');
+            const btn = document.getElementById("closeModal")
+
+            signUpButton.addEventListener('click', () => {
+                ctn.classList.add("right-panel-active");
+                btn.classList.add("blue");
+
+            });
+
+            signInButton.addEventListener('click', () => {
+                ctn.classList.remove("right-panel-active");
+                btn.classList.remove("blue");
+            });
+
+        </script>
+    </section>
+    <!-- End Header-->
+
+    <!--About-->
+
+    <section id="about1">
+
+
+        <div class="about1">
+            <div class="about1content">
+                <h1 class="about1heading">About Us</h1>
+                <p>Cryptography was established in 2020 when cryptocurrencies had taken the world up
+                    by a storm.With people realising the importance of investing in cryptocurrencies, we saw a
+                    potential for blockchain technology to revolutionize the financial industry. Making the payments
+                    faster, more secure and less expensive on a global scale.Cryptography is a company that aims to
+                    make
+                    investing in digital currencies hassle-free.</p>
+                <p> We are a team of 32 experts with 6 years of professional analyst experience in the investing
+                    businesses and cryptocurrency market. Cryptography is known for creating an exceptional return
+                    investment portfolio with our accumulated experience in different business and investment
+                    segments.
+                </p>
+            </div>
+
+            <div class="about1img">
+
+                <img src="/static/about.png" alt="about" class="">
+            </div>
+        </div>
+
+    </section>
+
+    <!--End About-->
+
+    <!--End Crypto-->
+
+    <!--End Why Crypto-->
+
+    <section id="why1">
+
+        <div class="why1">
+            <h1>Why Cryptography?</h1>
+            <div class="why1content1">
+                <h1>Wealth creation</h1>
+                <p>There is a great possibility of obtaining stable profitability up to 520% exceeding the interest
+                    rate
+                    on bank deposits and equity markets.
+                    The active growth of the cryptocurrency market, as well as the worldwide publicity, makes the
+                    cryptocurrency more and more popular.
+                    The rise of some of the cryptocurrencies has simply surprised a lot of big businessmen and
+                    corporations. Knowing that “Cryptocurrencies” is going to be the next BIG thing, our team
+                    believes
+                    that everyone should be able to invest and earn on this.
+                </p>
+            </div>
+            <div class="why2">
+                <div class="why1content2">
+
+                    <h1 class="">Quick withdrawal Of Money</h1>
+                    <p>We know how important it is to have access to your funds, therefore we have automated the
+                        process
+                        of
+                        withdrawing dividends up to 24 hours.
+                        We also offer our clients an option to make a convenient deposit directly from their crypto
+                        wallet.
+                    </p>
+                </div>
+
+                <div class="why1content3">
+
+                    <h1 class="">Minimum invest $250</h1>
+                    <p>You have the right to define your investment goals by yourself. Hence, everyone interested in
+                        investing in digital currencies can start with a small minimum amount of just $250.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FAQ-->
+
+    <section id="faq">
+
+        <!-- <h1>About Cryptography Inc.</h1>-->
+        <div class="faq">
+            <div class="faqcontent">
+                <h1 class="faqheading">Frequently Asked Questions</h1>
+                <script type="text/javascript">
+                    //<![CDATA[
+                </script>
+
+                <div id="Accordion1" style="border-color: lawngreen; height: auto; overflow: auto;">
+                    <input type="hidden" name="Accordion1_AccordionExtender_ClientState"
+                        id="Accordion1_AccordionExtender_ClientState">
+                    <div class="HeaderSelectedCss">
+                        Why Should I invest in cryptocurrencies?
+                    </div>
+                    <div style="height: auto; overflow: auto; display: block;">
+                        <div class="ContentCss" style="display: block; height: auto; overflow: auto;">
+
+                            <p>Cryptocurrencies are the future of the world. With the shift from the traditional
+                                market
+                                to the
+                                digital
+                                market, there is a need to move to digital currencies as well. Now is the right time
+                                to
+                                invest
+                                in
+                                Cryptocurrencies. </p>
+
+                        </div>
+                    </div>
+                    <div class="HeaderCSS">
+                        What is decentralized finance?
+                    </div>
+                    <div style="height: 0px; overflow: hidden; display: none;">
+                        <div class="ContentCss" style="display: block; height: auto; overflow: hidden;">
+
+                            <p>Decentralized finance or DeFi is an independent financial ecosystem that allows its
+                                users
+                                to
+                                invest,
+                                trade, buy and sell cryptocurrencies eliminating the middlemen from transactions.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="HeaderCSS">
+                        Why choose a company that follows a decentralized
+                        structure?
+                    </div>
+                    <div style="height: 0px; overflow: hidden; display: none;">
+                        <div class="ContentCss" style="display: block; height: auto; overflow: hidden;">
+
+                            <p>A decentralized company has a transparent and efficient financial structure. It is
+                                secured by
+                                blockchain
+                                technology that ensures encrypted transactions. This technology helps in reducing
+                                scams,
+                                frauds,
+                                corruption etc. </p>
+
+                        </div>
+                    </div>
+                    <div class="HeaderCSS">
+                        What is the future of cryptocurrency?
+                    </div>
+                    <div style="height: 0px; overflow: hidden; display: none;">
+                        <div class="ContentCss" style="display: block; height: auto; overflow: hidden;">
+
+                            <p>We cannot imagine a world without cryptocurrencies, even with its unpredictable
+                                market,
+                                the
+                                future
+                                does
+                                not seem as bleak. With easy to invest and high returns, people tend to invest in
+                                cryptocurrency
+                                as
+                                the
+                                world moves from traditional transactions to digital transactions.</p>
+
+                        </div>
+                    </div>
+                    <div class="HeaderCSS">
+                        How do I know which cryptocurrency to invest in?
+                    </div>
+                    <div style="height: 0px; overflow: hidden; display: none;">
+                        <div class="ContentCss" style="display: block; height: auto; overflow: hidden;">
+
+                            <p>If you are not sure about the workings of trading in cryptocurrencies, it’s okay.
+                                CryptoGraphy is
+                                here to
+                                guide you. All you have to do is trust us for investing your money into the closely
+                                monitored
+                                crypto
+                                market and enjoy the benefits of high returns. </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="faqimg">
+
+                <img src="/static/faq.png" alt="faq" class="">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <h1>About Cryptography Inc.</h1>-->
+
+    <!--contact-->
+    <section id="contact">
+
+
+        <div class="contact">
+            <div class="contactcontent">
+
+
+
+                <div>
+                    <h1>Get in Touch</h1>
+                </div>
+                <div class="name">
+
+                    <input name="name" type="text" id="name" class="name" placeholder="Your name..">
+
+                </div>
+
+                <div class="email">
+
+                    <input name="mail" type="text" id="mail" class="email" placeholder="Your Email Id..">
+                </div>
+                <div class="mobile">
+
+                    <input name="mobile" type="text" id="mobile" class="mobile" placeholder="Your Mobile No..">
+                </div>
+                <div class="message">
+
+                    <textarea name="message" rows="4" cols="20" id="message" class="message"
+                        placeholder="Your Message.."></textarea>
+                </div>
+
+                <div class="submitbtnrow">
+
+                    <input type="submit" name="submit" value="submit" id="submit" class="">
+                    <span id="Label1" style="color:DarkGreen;"></span>
+
+                </div>
+
+
+            </div>
+
+            <div class="contactimg">
+
+                <img src="/static/contact2.png" alt="contact" class="">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="footer">
+        <footer class="footer">
+            <div>
+                <p>Copyright © 2021 All Rights reserved</p>
+            </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
