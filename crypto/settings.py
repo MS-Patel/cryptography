@@ -35,7 +35,6 @@ INSTALLED_APPS = [
 
     #my app
     'account',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,4 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,"assets")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'app:login'
+LOGIN_URL = 'account:login'
+
+LOGOUT_REDIRECT_URL = 'app:home'

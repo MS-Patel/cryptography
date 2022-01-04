@@ -1,21 +1,16 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
-from django.shortcuts import redirect, render
-from .models import Coin
+from django.http.response import HttpResponse
+from django.shortcuts import  render
+from .models import Coin, UserPortfolio
 
 def home(request):
     return render(request,'index.html')
-
-def login(request):
-    # authenticare user credensials:
-
-    # after login redirect to userdashboard
-    return redirect('app:userdashboard')   
 
 def userprofile(request):
     return render(request,'user/userprofile.html')
 
 def userdashboard(request):
-    return render(request,'user/userdashboard.html')
+    list=UserPortfolio.objects.get(user=request.user)
+    return render(request,'user/userdashboard.html',{'list':list})
 
 def adminbase(request):
     return render(request,'admin/admin.html')    

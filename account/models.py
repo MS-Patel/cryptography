@@ -1,8 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser,UserManager
 
-
-class MyAccountManager(BaseUserManager):
+class MyAccountManager(UserManager):
 	def create_user(self, email, username, password=None):
 		if not email:
 			raise ValueError("Users must have an email address")
@@ -13,7 +12,7 @@ class MyAccountManager(BaseUserManager):
 				email=self.normalize_email(email),
 				username=username,
 			)
-
+		user.is_verified = False
 		user.set_password(password)
 		user.save(using=self._db)
 		return user
@@ -31,17 +30,17 @@ class MyAccountManager(BaseUserManager):
 		return user
 
 
-class Account(AbstractBaseUser):
+class Account(AbstractUser):
 	email 					= models.EmailField(verbose_name="email", max_length=60, unique=True)
 	username 				= models.CharField(max_length=30, unique=True)
 	date_joined				= models.DateTimeField(verbose_name='date joined', auto_now_add=True)
 	last_login				= models.DateTimeField(verbose_name='last login', auto_now=True)
 	is_admin				= models.BooleanField(default=False)
 	is_active				= models.BooleanField(default=True)
+	is_verified				= models.BooleanField(default=True)
 	is_staff				= models.BooleanField(default=False)
 	is_superuser			= models.BooleanField(default=False)
-	# first_name 				= models.CharField(max_length=30)
-
+	
 	USERNAME_FIELD = 'email'
 	REQUIRED_FIELDS = ['username', ]
 
@@ -55,4 +54,5 @@ class Account(AbstractBaseUser):
 
 	def has_module_perms(self, app_label):
 		return True
+
 

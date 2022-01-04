@@ -53,20 +53,20 @@
                     <div class="ctn" id="ctn">
                    <a href="/"> <span id="closeModal" class="white">&times;</span></a>
                         <div class="form-ctn sign-up-ctn">
-                            <form method="post" action="{% url 'app:login' %}">
+                            <form method="post" action="{% url 'account:register' %}">
                                 <h1>Create Account</h1>
                                 {% csrf_token %}
-                                <input type="text" name=name placeholder="Name" />
-                                <input type="text" name=uname placeholder="Username" />
-                                <input type="password" name=password placeholder="Password" />
+                                <input type="text" name="name" placeholder="Name" />
+                                <input type="email" name='email_id' placeholder="Email Id" />
+                                <input type="password" name="password" placeholder="Password" />
                                 <button>Sign Up</button>
                             </form>
                         </div>
                         <div class="form-ctn sign-in-ctn">
-                            <form action="{% url 'app:login' %}" method="post">
+                            <form action="{% url 'account:login' %}" method="post">
                                 <h1>Sign in</h1>
-                                {% csrf_token %}
-                                <input type="text" name="uname" placeholder="Username" />
+                                {% csrf_token %}    
+                                <input type="email" name="email_id" placeholder="Email Id" />
                                 <input type="password" name="password" placeholder="Password" />
                                 <a href="#">Forgot your password?</a>
                                 <button>Sign In</button>

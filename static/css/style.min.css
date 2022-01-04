@@ -13179,8 +13179,8 @@ select.form-select.form-control-line {
     -webkit-box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.05);
     box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.05);
     background: -webkit-gradient(linear, left top, right top, from(#0178bc), to(#00bdda));
-    background: -o-linear-gradient(left, #0178bc 0%, #00bdda 100%);
-    background: linear-gradient(to right, #0178bc 0%, #00bdda 100%);
+    background: -o-linear-gradient(left, #51e6c7 0%, #00bdda 150%);
+    background: linear-gradient(to right, #51e6c7 0%, #00bdda 150%);
     height: 70px
 }
 
