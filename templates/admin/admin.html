@@ -117,6 +117,10 @@
                                             aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
                                 </li>
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{% url 'app:adminNAV' %}" aria-expanded="false"><i class="me-3 far  fa-fw"
+                                            aria-hidden="true"></i><span class="hide-menu">NAV</span></a>
+                                </li>
+                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="/" aria-expanded="false"><i class="me-3 far  fa-fw"
                                             aria-hidden="true"></i><span class="hide-menu">Log out</span></a>
                                 </li>
@@ -155,7 +159,17 @@
                                 <i class="me-3 fa fa-user" aria-hidden="true"></i><span
                                     class="hide-menu">Profile</span></a>
                             </i>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{% url 'app:adminctsdetails' %}" aria-expanded="false">
+                                <i class="me-3 fas fa-users" aria-hidden="true"></i><span
+                                    class="hide-menu">Users Details</span></a>
+                            </i>
                         </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                            href="{% url 'app:adminNAV' %}" aria-expanded="false">
+                            <i class="me-3 fab fa-bitcoin" aria-hidden="true"></i><span class="hide-menu">NAV</span></a>
+                        </i>
+                    </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/" aria-expanded="false">
                                 <i class="me-3 fas fa-sign-out-alt" aria-hidden="true"></i><span class="hide-menu">Log

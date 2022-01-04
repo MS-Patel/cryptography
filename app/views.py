@@ -1,11 +1,15 @@
-from django.shortcuts import render
-
+from django.http.response import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, render
+from .models import Coin
 
 def home(request):
     return render(request,'index.html')
 
 def login(request):
-    return render(request,'user/users.html')   
+    # authenticare user credensials:
+
+    # after login redirect to userdashboard
+    return redirect('app:userdashboard')   
 
 def userprofile(request):
     return render(request,'user/userprofile.html')
@@ -21,3 +25,18 @@ def admindashboard(request):
 
 def adminprofile(request):
     return render(request,'admin/adminprofile.html')        
+
+def adminctsdetails(request):
+    return render(request,'admin/adminctsdetails.html')        
+
+def adminNAV(request):
+    return render(request,'admin/adminNAV.html')        
+
+def coin(request):
+    if request.method=='POST':
+        obj = Coin()
+        obj.nav = request.POST['nav']
+        obj.save()
+        return HttpResponse('Successful')
+    return HttpResponse('/')
+    

@@ -2,76 +2,130 @@
 
 {% block extracss %}
 <style>
-    body {
-        background: #BA68C8
-    }
-    
-    .form-control:focus {
-        box-shadow: none;
-        border-color: #BA68C8
-    }
-    
-    .profile-button {
-        background: #BA68C8;
-        box-shadow: none;
-        border: none
-    }
-    
-    .profile-button:hover {
-        background: #682773
-    }
-    
-    .profile-button:focus {
-        background: #682773;
-        box-shadow: none
-    }
-    
-    .profile-button:active {
-        background: #682773;
-        box-shadow: none
-    }
-    
-    .back:hover {
-        color: #682773;
-        cursor: pointer
-    }
+
+label{
+    font-weight: 400;
+}
+
 </style>
 {% endblock %}
-            {% block content %}
-            <div class="container rounded bg-white mt-5">
-                <div class="row">
-                    <div class="col-md-4 border-right">
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="p-3 py-5">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                                    <h6>Back to home</h6>
+{% block content %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container-xl">
+    <div class="col">
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="e-profile">
+                            <div class="row">
+                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">User 123</h4>
+                                        <div class="text-muted"><medium>Last seen 2 hours ago</medium></div>
+                                        <div class="text-center text-sm-right">
+                                            <div class="text-muted"><medium>Joined 09 Dec 2017</medium></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h6 class="text-right">Edit Profile</h6>
+                                <ul class="nav nav-tabs">
+                                    <li class="nav-item"><a href="" class="active nav-link">Details</a></li>
+                                </ul>
+                                <div class="tab-content pt-3">
+                                    <div class="tab-pane active">
+                                        <form class="form" novalidate="">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label> Name</label>
+                                                                <input class="form-control" type="text" name="name"
+                                                                    placeholder="Xyz" value="Xyz">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Username</label>
+                                                                <input class="form-control" type="text" name="username"
+                                                                    placeholder="xyz.1s" value="Xyz.1s">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Number</label>
+                                                                <input class="form-control" type="number" name="number"
+                                                                    placeholder="+91987654321" value="+91987654321">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Email</label>
+                                                                <input class="form-control" type="text"
+                                                                    placeholder="user@example.com">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Holdings</label>
+                                                                <input class="form-control" type="number"
+                                                                    placeholder="10,000">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="col-12 col-sm-5 offset-sm-0 mb-3 mt-3">
+                                                    <div class="mb-2"><b>User Status</b></div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="custom-controls-stacked px-2">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="notifications-blog" checked="">
+                                                                    <label class="custom-control-label"
+                                                                        for="notifications-blog">active</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="custom-controls-stacked px-2">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="notifications-blog" checked="no">
+                                                                    <label class="custom-control-label"
+                                                                        for="notifications-blog">Admin</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="custom-controls-stacked px-2">
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="notifications-blog" checked="">
+                                                                    <label class="custom-control-label"
+                                                                        for="notifications-blog">Staff</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-end">
+                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row mt-2">
-                                <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="John"></div>
-                                <div class="col-md-6"><input type="text" class="form-control" value="Doe" placeholder="Doe"></div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="john_doe12@bbb.com"></div>
-                                <div class="col-md-6"><input type="text" class="form-control" value="+19685969668" placeholder="Phone number"></div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
-                                <div class="col-md-6"><input type="text" class="form-control" value="USA" placeholder="Country"></div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
-                                <div class="col-md-6"><input type="text" class="form-control" value="043958409584095" placeholder="Account Number"></div>
-                            </div>
-                            <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                         </div>
                     </div>
                 </div>
             </div>
-       
-            
-            {%endblock%}
+        </div>
+    </div>
+</div>
+
+{%endblock%}
