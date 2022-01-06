@@ -3,7 +3,7 @@
 {% block extracss %}
 <style>
     body {
-        background: #BA68C8
+        {% comment %} background: #BA68C8 {% endcomment %}
     }
     
     .form-control:focus {
@@ -41,7 +41,7 @@
             <div class="container rounded bg-white mt-5">
                 <div class="row">
                     <div class="col-md-4 border-right">
-                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">John Doe</span><span class="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90"><span class="font-weight-bold">Xyz</span><span class="text-black-50">Xyz@bbb.com</span><span>India</span></div>
                     </div>
                     <div class="col-md-8">
                         <div class="p-3 py-5">
@@ -51,25 +51,26 @@
                                 </div>
                                 <h6 class="text-right">Edit Profile</h6>
                             </div>
-                            <form action="{% url 'app:userprofile' %}">
+                            <form action="{% url 'app:userprofile' %}" method="POST">
+                                {% csrf_token %}
                                 <div class="row mt-2">
-                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="John"></div>
-                                    <div class="col-md-6"><input type="text" class="form-control" value="Doe" placeholder="Doe"></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="{{list.0.username}}" name="fname"></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="lastname" name=lname></div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="john_doe12@bbb.com"></div>
-                                    <div class="col-md-6"><input type="text" class="form-control" value="+19685969668" placeholder="Phone number"></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="{{list.0.email}}" readonly></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" value="{{list.0.phone}}" placeholder="Phone number" name=pnum></div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"></div>
-                                    <div class="col-md-6"><input type="text" class="form-control" value="USA" placeholder="Country"></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="{{list.0.address}}" name=address></div>
+                                    {% comment %} <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Country"></div> {% endcomment %}
                                 </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value="Bank of America"></div>
-                                    <div class="col-md-6"><input type="text" class="form-control" value="043958409584095" placeholder="Account Number"></div>
-                                </div>
+                                {% comment %} <div class="row mt-3">
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="Bank Name" value=""></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Account Number"></div>
+                                </div> {% endcomment %}
                                 <div class="mt-5 text-right">
-                                    <button class="btn btn-primary profile-button" type="button">Save Profile</button>
+                                    <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
                                 </div>
                             </form>
                         </div>

@@ -68,7 +68,16 @@
     .login {
         font-size: 50px;
         font-weight: 900;
-        margin: 50px 40px 40px;
+        margin: 30px 40px 40px;
+    }
+
+    .eulae {
+        color: #00bdda;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 40px;
+        font-weight: 500;
+
     }
 
     .eula {
@@ -77,6 +86,8 @@
         line-height: 1.5;
         margin: 40px;
     }
+
+    
 
     .right {
         background: #474A59;
@@ -157,7 +168,8 @@
 <div class="page">
     <div class="navctn">
         <div class="left">
-            <div class="login">NAV</div>
+            <div class="login">NAV </div>
+            <div class="eulae"> Current NAV  [${{list.nav}} ]</div>
             <div class="eula">By changing NAV you agree to the ridiculously long terms that you didn't bother to read
             </div>
         </div>
@@ -176,7 +188,7 @@
             <form class="form" method="post" action="{% url 'app:coin' %}">
                 {% csrf_token %}
                 <label for="email">NAV</label>
-                <input type="number" id="email" name='nav'>
+                <input type="number"  placeholder=${{list.nav}} step="any" id="email" name='nav'>
                 <input type="submit" id="submit" value="Submit">
             </form>
         </div>
