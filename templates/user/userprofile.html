@@ -55,14 +55,14 @@
                                 {% csrf_token %}
                                 <div class="row mt-2">
                                     <div class="col-md-6"><input type="text" class="form-control" placeholder="first name" value="{{list.0.username}}" name="fname"></div>
-                                    <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="lastname" name=lname></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" value="{{list.0.lname}}" placeholder="lastname" name="lname"></div>
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-md-6"><input type="text" class="form-control" placeholder="Email" value="{{list.0.email}}" readonly></div>
-                                    <div class="col-md-6"><input type="tel" class="form-control" value="{{list.0.phone}}" placeholder="Phone number" name=pnum></div>
+                                    <div class="col-md-6"><input type="tel" class="form-control" value="{{list.0.phone}}" placeholder="Phone number" name="pnum"></div>
                                 </div>
                                 <div class="row mt-3">
-                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="{{list.0.address}}" name=address></div>
+                                    <div class="col-md-6"><input type="text" class="form-control" placeholder="address" value="{{list.0.address}}" name="address"></div>
                                     {% comment %} <div class="col-md-6"><input type="text" class="form-control" value="" placeholder="Country"></div> {% endcomment %}
                                 </div>
                                 {% comment %} <div class="row mt-3">

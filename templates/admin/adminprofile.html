@@ -2,11 +2,9 @@
 
 {% block extracss %}
 <style>
-
-label{
-    font-weight: 400;
-}
-
+    label {
+        font-weight: 400;
+    }
 </style>
 {% endblock %}
 {% block content %}
@@ -21,10 +19,14 @@ label{
                             <div class="row">
                                 <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                     <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">User 123</h4>
-                                        <div class="text-muted"><medium>Last seen 2 hours ago</medium></div>
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{list.0.email}}</h4>
+                                        <div class="text-muted">
+                                            <medium>{{list.0.last_login}}</medium>
+                                        </div>
                                         <div class="text-center text-sm-right">
-                                            <div class="text-muted"><medium>Joined 09 Dec 2017</medium></div>
+                                            <div class="text-muted">
+                                                <medium>{{list.0.date_joined}}</medium>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -33,92 +35,91 @@ label{
                                 </ul>
                                 <div class="tab-content pt-3">
                                     <div class="tab-pane active">
-                                        <form class="form" novalidate="">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label> Name</label>
-                                                                <input class="form-control" type="text" name="name"
-                                                                    placeholder="Xyz" value="Xyz">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Username</label>
-                                                                <input class="form-control" type="text" name="username"
-                                                                    placeholder="xyz.1s" value="Xyz.1s">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Number</label>
-                                                                <input class="form-control" type="number" name="number"
-                                                                    placeholder="+91987654321" value="+91987654321">
-                                                            </div>
+                                        <form class="form" action = "{% url 'app:adminprofile' %}" method="POST>
+                                            {% csrf_token %}
+                                            <div class=" row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label> Name</label>
+                                                            <input class="form-control" type="text" name="fname"
+                                                                placeholder="Xyz" value="Xyz">
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Email</label>
-                                                                <input class="form-control" type="text"
-                                                                    placeholder="user@example.com">
-                                                            </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Username</label>
+                                                            <input class="form-control" type="text" name="username"
+                                                                placeholder="xyz.1s" value="{{list.0.username}}">
                                                         </div>
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="form-group">
-                                                                <label>Holdings</label>
-                                                                <input class="form-control" type="number"
-                                                                    placeholder="10,000">
-                                                            </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Number</label>
+                                                            <input class="form-control" type="number" name="pnum"
+                                                                placeholder="+91987654321" value="{{list.2.phone}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input class="form-control" type="text"
+                                                            value="{{list.0.email}}"    placeholder="user@example.com">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Holdings</label>
+                                                            <input class="form-control" type="number"
+                                                             value="{{port.0.total_portfolio}}" placeholder="" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                                <div class="col-12 col-sm-5 offset-sm-0 mb-3 mt-3">
-                                                    <div class="mb-2"><b>User Status</b></div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="custom-controls-stacked px-2">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="notifications-blog" checked="">
-                                                                    <label class="custom-control-label"
-                                                                        for="notifications-blog">active</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="custom-controls-stacked px-2">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="notifications-blog" checked="no">
-                                                                    <label class="custom-control-label"
-                                                                        for="notifications-blog">Admin</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="custom-controls-stacked px-2">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <input type="checkbox" class="custom-control-input"
-                                                                        id="notifications-blog" checked="">
-                                                                    <label class="custom-control-label"
-                                                                        for="notifications-blog">Staff</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-5 offset-sm-0 mb-3 mt-3">
+                                        <div class="mb-2"><b>User Status</b></div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="custom-controls-stacked px-2">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="notifications-blog" checked="">
+                                                        <label class="custom-control-label"
+                                                            for="notifications-blog">active</label>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-controls-stacked px-2">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="notifications-blog" checked="no">
+                                                        <label class="custom-control-label"
+                                                            for="notifications-blog">Admin</label>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-controls-stacked px-2">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="notifications-blog" checked="">
+                                                        <label class="custom-control-label"
+                                                            for="notifications-blog">Staff</label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col d-flex justify-content-end">
-                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col d-flex justify-content-end">
+                                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -126,6 +127,8 @@ label{
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 {%endblock%}
