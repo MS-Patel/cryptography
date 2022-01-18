@@ -13,6 +13,7 @@ urlpatterns = [
     path('adminprofile',views.adminprofile,name='adminprofile'),
     path('adminctsdetails',views.adminctsdetails,name='adminctsdetails'),
     path('adminNAV',views.adminNAV,name='adminNAV'),
+    path('faq',views.faq,name='faq'),
     
 ]
  

@@ -1,0 +1,110 @@
+{% extends 'user/users.html' %}
+
+{% block extracss %}
+
+<style>
+    
+   
+    .center {
+    padding-top:30px;
+      width: 600px;
+      margin: auto;
+      min-height: calc(100vh - 70px);
+    }
+    section a {
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      text-align: center;
+      padding: 10px;
+      display: block;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+      overflow: hidden;
+      border-bottom: 1px solid #aaa69d;
+    }
+    section p {
+      padding: 10px;
+      overflow: hidden;
+      height: 0;
+      opacity: 0;
+      background: #39dacc;
+      color: #fff;
+      overflow: hidden;
+      letter-spacing: 2px;
+      transition: 1s;
+    }
+    section:target p {
+      height: 10em;
+      opacity: 1;
+      padding: 20px;
+    }
+.faqheading{
+max-width: fit-content;
+ margin:30px auto;
+}    
+    
+</style>
+{% endblock %} 
+
+
+{% block content %}
+<div class="center">
+<h1 class="faqheading">Frequently Asked Questions</h1>
+    <section id="item1">
+      <a href="#item1"> Why Should I invest in cryptocurrencies?</a>
+      <p>Cryptocurrencies are the future of the world. With the shift from the traditional
+      market
+      to the
+      digital
+      market, there is a need to move to digital currencies as well. Now is the right time
+      to
+      invest
+      in
+      Cryptocurrencies.</p>
+    </section>
+    <section id="item2">
+      <a href="#item2"> What is decentralized finance?</a>
+      <p>Decentralized finance or DeFi is an independent financial ecosystem that allows its
+      users
+      to
+      invest,
+      trade, buy and sell cryptocurrencies eliminating the middlemen from transactions.</p>
+    </section>
+    <section id="item3">
+      <a href="#item3">Why choose a company that follows a decentralized
+      structure?</a>
+      <p>A decentralized company has a transparent and efficient financial structure. It is
+      secured by
+      blockchain
+      technology that ensures encrypted transactions. This technology helps in reducing
+      scams,
+      frauds,
+      corruption etc.</p>
+    </section>
+    <section id="item4">
+      <a href="#item4">What is the future of cryptocurrency?</a>
+      <p>We cannot imagine a world without cryptocurrencies, even with its unpredictable
+      market,
+      the
+      future
+      does
+      not seem as bleak. With easy to invest and high returns, people tend to invest in
+      cryptocurrency
+      as
+      the
+      world moves from traditional transactions to digital transactions.</p>
+    </section>
+    <section id="item5">
+      <a href="#item5">How do I know which cryptocurrency to invest in?</a>
+      <p>If you are not sure about the workings of trading in cryptocurrencies, it’s okay.
+      CryptoGraphy is
+      here to
+      guide you. All you have to do is trust us for investing your money into the closely
+      monitored
+      crypto
+      market and enjoy the benefits of high returns.</p>
+    </section>
+  </div>
+
+{%endblock%}

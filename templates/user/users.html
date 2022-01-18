@@ -158,6 +158,24 @@
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{% url 'account:logout' %}" aria-expanded="false">
+                                <i class="me-3 fas fa-lock" aria-hidden="true"></i><span class="hide-menu">2FA
+                                    </span></a>
+                            </i>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{% url 'app:faq' %}" aria-expanded="false">
+                                <i class="me-3 fas fa-question" aria-hidden="true"></i><span class="hide-menu">Faq
+                                    </span></a>
+                            </i>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{% url 'account:logout' %}" aria-expanded="false">
+                                <i class="me-3 fas fa-ticket-alt aria-hidden="true"></i><span class="hide-menu">Contact & Support
+                                    </span></a>
+                            </i>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{% url 'account:logout' %}" aria-expanded="false">
                                 <i class="me-3 fas fa-sign-out-alt" aria-hidden="true"></i><span class="hide-menu">Log
                                     Out</span></a>
                             </i>
@@ -182,17 +200,6 @@
 
             {%endblock%}
 
-
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                {% comment %} © 2021 Monster Admin by <a href="https://www.wrappixel.com/">wrappixel.com</a>
-                {% endcomment %}
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->

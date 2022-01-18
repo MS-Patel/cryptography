@@ -23,6 +23,10 @@ def userdashboard(request):
     alist=Coin.objects.last()
     return render(request,'user/userdashboard.html',{'list':list,'alist': alist})
 
+def faq(request):
+
+    return render (request,'user/faq.html')    
+
 def adminbase(request):
     return render(request,'admin/admin.html')    
 
