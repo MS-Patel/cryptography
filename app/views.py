@@ -4,6 +4,9 @@ from django.shortcuts import  redirect, render
 from account.models import Account
 from .models import Coin, UserPortfolio
 
+from django.contrib import messages
+from .forms import FeedbackForm
+
 def home(request):
     return render(request,'index.html')
 
@@ -67,3 +70,16 @@ def coin(request):
         return redirect('app:adminNAV')
     return HttpResponse('/')
     
+
+
+
+def feedback(request):
+    if request.method == 'POST':
+        f = FeedbackForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.add_message(request, messages.INFO, 'Feedback Submitted.')
+            return redirect('app:feedback')
+    else:
+        f = FeedbackForm()
+    return render(request, 'user/c&s.html', {'form': f})   
