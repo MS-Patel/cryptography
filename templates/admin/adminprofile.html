@@ -35,7 +35,7 @@
                                 </ul>
                                 <div class="tab-content pt-3">
                                     <div class="tab-pane active">
-                                        <form class="form" action = "{% url 'app:adminprofile' %}" method="POST>
+                                        <form class="form" action = "{% url 'app:adminprofile' list.id %}" method="POST">
                                             {% csrf_token %}
                                             <div class=" row">
                                             <div class="col">
@@ -44,21 +44,21 @@
                                                         <div class="form-group">
                                                             <label> Name</label>
                                                             <input class="form-control" type="text" name="fname"
-                                                                placeholder="Xyz" value="Xyz">
+                                                                placeholder="First Name" value="{{list.fname}}">
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label>Username</label>
                                                             <input class="form-control" type="text" name="username"
-                                                                placeholder="xyz.1s" value="{{list.0.username}}">
+                                                                placeholder="username" value="{{list.username}}">
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label>Number</label>
                                                             <input class="form-control" type="number" name="pnum"
-                                                                placeholder="+91987654321" value="{{list.2.phone}}">
+                                                                placeholder="Phone No" value="{{list.phone}}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -66,8 +66,8 @@
                                                     <div class="col">
                                                         <div class="form-group">
                                                             <label>Email</label>
-                                                            <input class="form-control" type="text"
-                                                            value="{{list.0.email}}"    placeholder="user@example.com">
+                                                            <input class="form-control"  type="email" name="email"
+                                                            value="{{list.email}}" placeholder="user@example.com" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                         <div class="form-group">
                                                             <label>Holdings</label>
                                                             <input class="form-control" type="number"
-                                                             value="{{port.0.total_portfolio}}" placeholder="" readonly>
+                                                             value="{{port.total_portfolio}}" placeholder="" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -89,25 +89,9 @@
                                                 <div class="custom-controls-stacked px-2">
                                                     <div class="custom-control custom-checkbox">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="notifications-blog" checked="">
+                                                            id="notifications-blog"  m,k>
                                                         <label class="custom-control-label"
                                                             for="notifications-blog">active</label>
-                                                    </div>
-                                                </div>
-                                                <div class="custom-controls-stacked px-2">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="notifications-blog" checked="no">
-                                                        <label class="custom-control-label"
-                                                            for="notifications-blog">Admin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="custom-controls-stacked px-2">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="notifications-blog" checked="">
-                                                        <label class="custom-control-label"
-                                                            for="notifications-blog">Staff</label>
                                                     </div>
                                                 </div>
                                             </div>
