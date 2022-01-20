@@ -12,15 +12,16 @@
     <meta name="description"
         content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     {% endcomment %}
+    {% load static %}
     <meta name="robots" content="noindex,nofollow">
     <title>Admin panel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/monster-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon.png' %}">
     <!-- Custom CSS -->
-    <link href="static/assets/plugins/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="{% static 'assets/plugins/chartist/dist/chartist.min.css' %}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="static/css/style.min.css" rel="stylesheet">
+    <link href="{%static 'css/style.min.css' %}" rel="stylesheet">
 
     {% block extracss %}{% endblock %}
 
@@ -61,7 +62,7 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="/static/logoblack.png" alt="homepage" class="dark-logo" />
+                            <img src="{% static 'logoblack.png' %}" alt="homepage" class="dark-logo" />
                         </b>
                     </a>
                     <!-- ============================================================== -->
@@ -104,17 +105,13 @@
                         <li class="nav-item dropdown" onclick="navbarDropdown()">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="static/assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Admin
+                                <img src="{% static 'assets/images/users/1.jpg' %}" alt="user" class="profile-pic me-2">Admin
                                 profile
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{% url 'app:admindashboard' %}" aria-expanded="false"><i class="me-3 far  fa-fw"
                                             aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
-                                </li>
-                                <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                        href="{% url 'app:adminprofile' %}" aria-expanded="false"><i class="me-3 far  fa-fw"
-                                            aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
                                 </li>
                                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{% url 'app:adminNAV' %}" aria-expanded="false"><i class="me-3 far  fa-fw"
@@ -154,11 +151,7 @@
                                 href="{% url 'app:admindashboard' %}" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="{% url 'app:adminprofile' %}" aria-expanded="false">
-                                <i class="me-3 fa fa-user" aria-hidden="true"></i><span
-                                    class="hide-menu">Users Profile</span></a>
-                            </i>
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{% url 'app:adminctsdetails' %}" aria-expanded="false">
                                 <i class="me-3 fas fa-users" aria-hidden="true"></i><span
@@ -166,7 +159,7 @@
                             </i>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                            href="#" aria-expanded="false">
+                            href="{% url 'app:adminsupport' %}" aria-expanded="false">
                             <i class="me-3 fas fa-ticket-alt aria-hidden="true"></i><span class="hide-menu">Support
                                 </span></a>
                         </i>
@@ -223,9 +216,9 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="static/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{% static 'plugins/jquery/dist/jquery.min.js' %}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="static/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'plugins/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
     <script src="js/app-style-switcher.js"></script>
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
@@ -235,8 +228,8 @@
     <script src="js/custom.js"></script>
     <!--This page JavaScript -->
     <!--flot chart-->
-    <script src="static/plugins/flot/jquery.flot.js"></script>
-    <script src="static/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="{% static 'plugins/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'plugins/flot.tooltip/js/jquery.flot.tooltip.min.js' %}"></script>
     <script src="js/pages/dashboards/dashboard1.js"></script>
 </body>
 

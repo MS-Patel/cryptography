@@ -1,5 +1,11 @@
 {% extends 'user/users.html' %}
 
+{% block extracss %}
+<style>
+
+</style>
+{% endblock %}
+
 {% block title %}
     Feedback - {{ block.super }}
 {% endblock %}
@@ -17,7 +23,7 @@
     <div class="content">
     <div class="section-inner clearfix">
 
-        <h3>Submit Your feedback</h3>       
+        <h3>Contact & Support</h3>       
 
         <form action="" method="post">
             {% csrf_token %}

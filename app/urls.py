@@ -10,11 +10,12 @@ urlpatterns = [
     path('userdashboard',views.userdashboard,name='userdashboard'),
     path('adminbase',views.adminbase,name='adminbase'),
     path('admindashboard',views.admindashboard,name='admindashboard'),
-    path('adminprofile',views.adminprofile,name='adminprofile'),
     path('adminctsdetails',views.adminctsdetails,name='adminctsdetails'),
     path('adminNAV',views.adminNAV,name='adminNAV'),
     path('faq',views.faq,name='faq'),
     path('feedback', views.feedback, name='feedback'),
+    path('adminsupport', views.adminsupport, name='adminsupport'),
+    path('user/<int:id>/',views.adminprofile,name='adminprofile'),
     
 ]
  

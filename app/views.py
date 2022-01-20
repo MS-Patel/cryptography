@@ -2,7 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import  redirect, render
 
 from account.models import Account
-from .models import Coin, UserPortfolio
+from .models import Coin, Feedback, UserPortfolio
 
 from django.contrib import messages
 from .forms import FeedbackForm
@@ -17,6 +17,7 @@ def userprofile(request):
         obj.lname=request.POST['lname']
         obj.phone=request.POST['pnum']
         obj.address=request.POST['address']
+        obj.tgid=request.POST['tgid']
         obj.save()
     list=Account.objects.all()
     return render(request,'user/userprofile.html',{'list':list})
@@ -37,26 +38,25 @@ def admindashboard(request):
     
     return render(request,'admin/admindashboard.html')
 
-def adminprofile(request):
-    if request.method == 'POST':
-        obj= Account.objects.get(id=request.user.id)
-        obj.username=request.POST['fname']
-        obj.email=request.POST['email']
-        obj.date_joined=request.POST['date_joined']
-        obj.last_login=request.POST['last_login']
-        obj.lname=request.POST['lname']
-        obj.phone=request.POST['pnum']
-        obj.address=request.POST['address']
-        obj.save()
-    list=Account.objects.all()
-    port=UserPortfolio.objects.all()
-    return render(request,'admin/adminprofile.html',{'list':list,"port":port})        
-
 def adminctsdetails(request):
 
     data = Account.objects.all() 
 
-    return render(request,'admin/adminctsdetails.html',{"users":data})        
+    return render(request,'admin/adminctsdetails.html',{"users":data})   
+
+def adminprofile(request,id):
+    if request.method == 'POST':
+        obj= Account.objects.get(id=id)
+        print(obj)
+        obj.username=request.POST['username']
+        obj.phone=request.POST['pnum']
+        obj.save()
+        return redirect("app:adminctsdetails")
+    list=Account.objects.get(id=id)
+    port=UserPortfolio.objects.filter(user=list)
+    return render(request,'admin/adminprofile.html',{'list':list,"port":port})        
+
+     
 
 def adminNAV(request):
     list=Coin.objects.last()
@@ -83,3 +83,9 @@ def feedback(request):
     else:
         f = FeedbackForm()
     return render(request, 'user/c&s.html', {'form': f})   
+
+def adminsupport(request):
+
+        data = Feedback.objects.all()
+
+        return render(request,'admin/adminsupport.html',{'f':data})
