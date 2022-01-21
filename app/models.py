@@ -19,7 +19,7 @@ class UserPortfolio(models.Model):
     avg_nav = models.DecimalField(max_digits=20,decimal_places=2)
     last_units = models.DecimalField(max_digits=20,decimal_places=2)
     last_portfolio = models.DecimalField(max_digits=20,decimal_places=4)
-    last_nav = models.DecimalField(max_digits=20,decimal_places=2)
+    last_nav = models.DecimalField(max_digits=20,decimal_places=2) 
 
 class UserTransactions(models.Model):
 

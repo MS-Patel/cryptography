@@ -82,7 +82,7 @@ def feedback(request):
             return redirect('app:feedback')
     else:
         f = FeedbackForm()
-    return render(request, 'user/c&s.html', {'form': f})   
+    return render(request, 'user/c&s.html', {'form': f})
 
 def adminsupport(request):
 
