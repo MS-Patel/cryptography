@@ -19,7 +19,7 @@ def userprofile(request):
         obj.address=request.POST['address']
         obj.tgid=request.POST['tgid']
         obj.save()
-    list=Account.objects.all()
+    list=Account.objects.get(id=request.user.id)
     return render(request,'user/userprofile.html',{'list':list})
 
 def userdashboard(request):
@@ -47,7 +47,10 @@ def adminctsdetails(request):
 def adminprofile(request,id):
     if request.method == 'POST':
         obj= Account.objects.get(id=id)
-        print(obj)
+        if 'is_verified' in request.POST:
+           obj.is_verified = True
+        else:
+           obj.is_verified = False
         obj.username=request.POST['username']
         obj.phone=request.POST['pnum']
         obj.save()

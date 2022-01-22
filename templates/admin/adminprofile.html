@@ -35,75 +35,83 @@
                                 </ul>
                                 <div class="tab-content pt-3">
                                     <div class="tab-pane active">
-                                        <form class="form" action = "{% url 'app:adminprofile' list.id %}" method="POST">
+                                        <form class="form" action="{% url 'app:adminprofile' list.id %}" method="POST">
                                             {% csrf_token %}
                                             <div class=" row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label> Name</label>
-                                                            <input class="form-control" type="text" name="fname"
-                                                                placeholder="First Name" value="{{list.fname}}">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label> Name</label>
+                                                                <input class="form-control" type="text" name="fname"
+                                                                    placeholder="First Name" value="{{list.fname}}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Username</label>
+                                                                <input class="form-control" type="text" name="username"
+                                                                    placeholder="username" value="{{list.username}}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Number</label>
+                                                                <input class="form-control" type="number" name="pnum"
+                                                                    placeholder="Phone No" value="{{list.phone}}">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Username</label>
-                                                            <input class="form-control" type="text" name="username"
-                                                                placeholder="username" value="{{list.username}}">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Email</label>
+                                                                <input class="form-control" type="email" name="email"
+                                                                    value="{{list.email}}"
+                                                                    placeholder="user@example.com" readonly>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Number</label>
-                                                            <input class="form-control" type="number" name="pnum"
-                                                                placeholder="Phone No" value="{{list.phone}}">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Holdings</label>
+                                                                <input class="form-control" type="number"
+                                                                    value="{{port.total_portfolio}}" placeholder=""
+                                                                    readonly>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="col-12 col-sm-5 offset-sm-0 mb-3 mt-3">
+                                                <div class="mb-2"><b>User Status</b></div>
                                                 <div class="row">
                                                     <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Email</label>
-                                                            <input class="form-control"  type="email" name="email"
-                                                            value="{{list.email}}" placeholder="user@example.com" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Holdings</label>
-                                                            <input class="form-control" type="number"
-                                                             value="{{port.total_portfolio}}" placeholder="" readonly>
+                                                        <div class="custom-controls-stacked px-2">
+                                                            <div class="custom-control custom-checkbox">
+                                                                {% if list.is_verified %}
+                                                                <input type="checkbox" name="is_verified" class="custom-control-input"
+                                                                    id="notifications-blog" checked>
+                                                                {% else %}
+                                                                <input type="checkbox" name="is_verified" class="custom-control-input"
+                                                                    id="notifications-blog" >
+                                                                {% endif %}
+                                                                <label class="custom-control-label"
+                                                                    for="notifications-blog">active</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                    </div>
-                                    <div class="col-12 col-sm-5 offset-sm-0 mb-3 mt-3">
-                                        <div class="mb-2"><b>User Status</b></div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="custom-controls-stacked px-2">
-                                                    <div class="custom-control custom-checkbox">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="notifications-blog"  m,k>
-                                                        <label class="custom-control-label"
-                                                            for="notifications-blog">active</label>
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col d-flex justify-content-end">
+                                                    <button class="btn btn-primary" type="submit">Save Changes</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col d-flex justify-content-end">
-                                        <button class="btn btn-primary" type="submit">Save Changes</button>
-                                    </div>
-                                </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -111,8 +119,6 @@
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 {%endblock%}
