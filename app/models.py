@@ -1,3 +1,4 @@
+from random import choice
 from django.db import models
 from django.db.models.base import Model
 from django.db.models.fields import DateTimeField
@@ -28,7 +29,7 @@ class UserTransactions(models.Model):
     units = models.DecimalField(max_digits=20,decimal_places=4)
     portfolio = models.DecimalField(max_digits=20,decimal_places=4)
     trx_date = DateTimeField(auto_now_add=True)
-    trx_type = models.CharField(verbose_name="Transaction Type", max_length=50)
+    trx_type = models.CharField(verbose_name="Transaction Type", max_length=50,choices={('debit',"Debit"),('credit','Credit')})
 
 
 class Feedback(models.Model):

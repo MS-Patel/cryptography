@@ -246,46 +246,16 @@
                     <div class="table-responsive mt-5">
                         <table class="table stylish-table no-wrap">
                             <tbody>
+                                {% for user in trx %}
                                 <tr>
-                                    <td style="width:50px;"><span class="round">1</span></td>
+                                    <td style="width:50px;"><span class="round"></span></td>
                                     <td class="align-middle">
-                                        <h6>2021-01-22</h6>
+                                        <h6>{{user.trx_date}}</h6>
                                     </td>
-                                    <td class="align-middle">Credit</td>
-                                    <td class="align-middle">$3.9K</td>
+                                    <td class="align-middle">{{user.trx_type}}</td>
+                                    <td class="align-middle">$3.5K</td>
                                 </tr>
-                                <tr>
-                                    <td><span class="round round-success">2</span></td>
-                                    <td class="align-middle">
-                                        <h6>2021-05-13</h6>
-                                    </td>
-                                    <td class="align-middle">Debit</td>
-                                    <td class="align-middle">$12.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-primary">3</span></td>
-                                    <td class="align-middle">
-                                        <h6>2021-11-12</h6>
-                                    </td>
-                                    <td class="align-middle">Debit</td>
-                                    <td class="align-middle">$10.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-warning">4</span></td>
-                                    <td class="align-middle">
-                                        <h6>2020-09-23</h6>
-                                    </td>
-                                    <td class="align-middle">Credit</td>
-                                    <td class="align-middle">$12.9K</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="round round-danger">5</span></td>
-                                    <td class="align-middle">
-                                        <h6>2019-03-30</h6>
-                                    </td>
-                                    <td class="align-middle">Debit</td>
-                                    <td class="align-middle">$2.6K</td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>

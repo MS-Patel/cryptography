@@ -2,7 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import  redirect, render
 
 from account.models import Account
-from .models import Coin, Feedback, UserPortfolio
+from .models import Coin, Feedback, UserPortfolio, UserTransactions
 
 from django.contrib import messages
 from .forms import FeedbackForm
@@ -24,8 +24,9 @@ def userprofile(request):
 
 def userdashboard(request):
     list=UserPortfolio.objects.filter(user=request.user)
+    trx=UserTransactions.objects.filter(user=request.user)
     alist=Coin.objects.last()
-    return render(request,'user/userdashboard.html',{'list':list,'alist': alist})
+    return render(request,'user/userdashboard.html',{'list':list,'alist': alist,'trx':trx})
 
 def faq(request):
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Coin, Feedback, UserPortfolio
+from .models import Coin, Feedback, UserPortfolio, UserTransactions
 # Register your models here.
 
 
@@ -19,3 +19,9 @@ class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'subject','date',)
     search_fields = ('name', 'email',)
     date_hierarchy = 'date'
+
+@admin.register(UserTransactions)
+class trxadmin(admin.ModelAdmin):
+    list_display = [
+        'user','nav','units','portfolio','trx_date','trx_type'
+    ]    
