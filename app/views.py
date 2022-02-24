@@ -1,3 +1,4 @@
+from urllib import request
 from django.http.response import HttpResponse
 from django.shortcuts import  redirect, render
 
@@ -30,7 +31,13 @@ def userdashboard(request):
 
 def faq(request):
 
-    return render (request,'user/faq.html')    
+    return render (request,'user/faq.html')
+
+
+def TFA(request):
+
+    return render (request,'user/2FA.html')
+
 
 def adminbase(request):
     return render(request,'admin/admin.html')    
